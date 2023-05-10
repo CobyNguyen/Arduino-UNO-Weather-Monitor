@@ -1,25 +1,31 @@
 #include <LiquidCrystal.h>
 #include <dht_nonblocking.h>
 
+
 // Set up the LCD module
 LiquidCrystal lcd(7, 8, 9, 10, 13, 12);
+
 
 // Set up the DHT11 sensor
 #define DHT_SENSOR_PIN 2
 #define DHT_SENSOR_TYPE DHT_TYPE_11
 DHT_nonblocking dht_sensor(DHT_SENSOR_PIN, DHT_SENSOR_TYPE);
 
+
 // Set up the water level detection sensor
-#define WATER_LEVEL_SENSOR_PIN A0
+#define WATER_LEVEL_SENSOR_PIN A5
 const int MAX_WATER_LEVEL = 530;
+
 
 void setup() {
   // Initialize the LCD
   lcd.begin(16, 2);
 
+
   // Initialize the serial port for debugging
   Serial.begin(9600);
 }
+
 
 void loop() {
   // Read temperature and humidity from the DHT11 sensor
@@ -28,6 +34,7 @@ void loop() {
   if (dht_sensor.measure(&temperature, &humidity)) {
     // Read water level from the sensor
     int water_level = analogRead(WATER_LEVEL_SENSOR_PIN);
+
 
     // Display temperature, humidity, and water level on the LCD
     lcd.clear();
@@ -67,6 +74,8 @@ void loop() {
     Serial.print(water_level);
     Serial.println(")");
 
+
     delay(1000);
   }
 }
+
