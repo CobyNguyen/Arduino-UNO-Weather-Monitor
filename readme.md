@@ -24,4 +24,4 @@ IR Sensor -
 
 # Fritzing Diagram
 
-<img title="" src="https://github.com/CobyNguyen/Arduino-UNO-Weather-Monitor/blob/main/weather_monitor_bb.png?raw=true" alt="alt text" data-align="center">
+<img title="" src="https://github.com/CobyNguyen/Arduino-UNO-Weather-Monitor/blob/main/weather_monitor_v2_bb.png?raw=true" alt="alt text" data-align="center">
